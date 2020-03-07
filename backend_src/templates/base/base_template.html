@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIIT Naya Raipur Placement Cell</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'base/base.css' %}">
+</head>
+<body>
+    <nav class="home_nav navbar navbar-inverse bg-primary" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">IIIT Naya Raipur Placement Cell</a>
+            </div>
+            <!-- Group the nav links, forms, drop-down menus and other elements for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                               
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock content%}
+    </div>
+    <!-- footer  -->
+    
+    <section class="footer">
+        <div class="row">
+
+            <div class="footer-sections col-lg-8 col-md-8">
+                <h3>Contact Us</h3>
+                <div class="row">
+                    <div class=" footer-sections col-lg-4 col-md-4">
+                        <h4>IIIT–Naya Raipur</h4>
+                        <p>Plot No. 7, Sector 24,</p>
+                        <p>Near Purkhoti Muktangan ,</p> 
+                        <p>Atal Nagar – 493661</p>
+                        <p>Chhattisgarh</p>
+                        <p>placement@iiitnr.edu.in</p>
+                        <p>Tel:- (0771) 2474040</p>
+                    </div>
+                    <div class="footer-sections col-lg-4 col-md-4">
+                        <h4>IIIT–Naya Raipur</h4>
+                        <p>Plot No. 7, Sector 24,</p>
+                        <p>Near Purkhoti Muktangan ,</p>
+                        <p>Atal Nagar – 493661</p>
+                        <p>Chhattisgarh</p>
+                        <p>placement@iiitnr.edu.in</p>
+                        <p>Tel:- (0771) 2474040</p>
+                    </div>
+                    <div class="footer-sections col-lg-4 col-md-4">
+                        <h4>IIIT–Naya Raipur</h4>
+                        <p>Plot No. 7, Sector 24,</p>
+                        <p>Near Purkhoti Muktangan ,</p>
+                        <p>Atal Nagar – 493661</p>
+                        <p>Chhattisgarh</p>
+                        <p>placement@iiitnr.edu.in</p>
+                        <p>Tel:- (0771) 2474040</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-sections col-lg-4 col-md-4">
+                <h3>Links</h3>
+                <nav class="nav footer-nav">
+                    <p><li><a href="#">Brochure</a></li></p>
+                    <p><li><a href="#">Brochure</a></li></p>
+                    <p><li><a href="#">Brochure</a></li></p>
+                </nav>
+            </div>
+
+
+            <div class="copyright_bar col-lg-12 col-md-12 col-xs-12 col-sm-12 text-center">
+                ALL RIGHTS RESERVED &copy 
+                <span id="copyright">
+                    <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                </span>. IIIT NAYA RAIPUR
+            </div>
+        </div>
+    </section>
+  
+    <!-- end footer -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script src="{% static 'base/base.js' %}"></script>     
+</body>
+</html>
