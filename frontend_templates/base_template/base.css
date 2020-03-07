@@ -1,0 +1,26 @@
+body{
+    overflow-x: hidden;
+}
+.home_nav{
+    border-radius: 0px;
+}
+.footer{
+    background-image:linear-gradient(#080808,#232323);
+    color: white;
+    margin: 0;
+    padding: 0%;
+}
+.footer-sections{
+    padding-left:5%;
+    margin-bottom: 15px;
+}
+.copyright_bar {
+    padding:10px;
+}
+.footer-nav  a{
+    color:white;
+}
+
+.footer-nav a:hover {
+    color: black;
+}
