@@ -1,0 +1,32 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'IAM/main.css' %} ">
+<center>
+    <h1 class='title'>{{event.event_name}}</h1>
+    <hr>
+</center>
+<p class='about_content'>
+{{event.description}}
+</p>
+<div class="row">
+    <div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+
+            <div class="row">
+                <center>
+                    <a href="{% url 'IAM:event_speakers' event.id %}">
+                        <div class="content links-block col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <span class="tile-text">Speakers</span> ({{speaker_len}})
+                        </div>
+                    </a>
+                    <div class="content links-block col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <span class="tile-text">Projects</span> ({{projects_len}})
+                    </div>
+                    <div class="content links-block col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <span class="tile-text">Winners</span> {% if winner_declared %}(declared) {% else %}(Not Declared){% endif %}
+                    </div>
+                </center>
+            </div>
+    </div>
+</div>
+{% endblock content %}

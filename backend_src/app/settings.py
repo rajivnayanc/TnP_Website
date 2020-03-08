@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'IAM.apps.IamConfig',
     'recruiters.apps.RecruitersConfig',
     'why_us_and_procedure.apps.WhyUsAndProcedureConfig',
     'home_page.apps.HomePageConfig',

@@ -1,0 +1,45 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'IAM/main.css' %} ">
+<center>
+    <h1 class='title'>{{introduction.title}}</h1>
+    <hr>
+</center>
+<p class='about_content'>
+{{introduction.content}}
+</p>
+<div class="row">
+    <div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        {% for iam in iam_events %}
+        <a href="{% url 'IAM:event_detail' iam.id %}">
+            <div class="row content">
+                <div class="event_logo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <center>
+                        <img class='thumbnail' src="{{iam.logo.url}}" alt="">
+                    </center>
+                </div>
+
+                <div style="height: 100%;" class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                    <div style="height: 100%;" class="row">
+
+                        <div style="height: 50%;" class="event_name col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <center>
+                                <p class="">{{iam.event_name}}</p>
+                            </center>
+                        </div>
+                        <hr>
+                        <div style="height: 50%;" class="event_date col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <center>
+                                <p class="">{{iam.date}}</p>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
