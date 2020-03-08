@@ -1,0 +1,13 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'why_us_and_procedure/why_us.css' %} ">
+<div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+    <center>
+        <h1 class='title'>{{objects.title}}</h1>
+        <hr>
+    </center>
+    <div class="content marked-content">{{objects.text | linebreaks}}</div>
+</div>
+
+{% endblock content %}

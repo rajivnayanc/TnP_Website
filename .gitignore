@@ -2,3 +2,4 @@ django_env/
 *.pyc
 *.sqlite3
 .vscode/
+media/
