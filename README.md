@@ -8,9 +8,9 @@ IIIT Naya Raipur TnP Website
 [ ] Our Recruiters  Rajiv  
 [ ] Per Year Statistics  
 [ ] IAM (Per Year - )  Rajiv  
-   - [] Speakers
-   - [] Projects
-   - [] Winners  
+   - [ ] Speakers
+   - [ ] Projects
+   - [ ] Winners  
   
 [ ] Why Us? Rajiv  
 [ ] Procedure  Rajiv    
