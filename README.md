@@ -5,7 +5,7 @@ IIIT Naya Raipur TnP Website
 
 - [ ] About Us  Jai  
 - [ ] Courses (CSE, ECE, DSAI)  Jai  
-- [ ] Our Recruiters  Rajiv  
+- [X] Our Recruiters  Rajiv  
 - [ ] Per Year Statistics  
 - [ ] IAM (Per Year - )  Rajiv  
    - [ ] Speakers
