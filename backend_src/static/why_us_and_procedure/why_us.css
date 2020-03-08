@@ -1,0 +1,17 @@
+.content-block{
+    /* margin: 0 auto; */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #E8EBEF;
+    background-color: #F9F9F9;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+}
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width:60%;
+}
+.title{
+    font-weight: bold;
+}

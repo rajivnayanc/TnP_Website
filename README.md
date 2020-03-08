@@ -12,8 +12,8 @@ IIIT Naya Raipur TnP Website
    - [ ] Projects
    - [ ] Winners  
   
-- [ ] Why Us? Rajiv  
-- [ ] Procedure  Rajiv    
+- [X] Why Us? Rajiv  
+- [X] Procedure  Rajiv    
 - [ ] Team Jai
 
 
