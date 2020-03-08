@@ -6,4 +6,5 @@ app_name = 'why_us_and_procedure'
 urlpatterns = [
     path('why_us/',views.why_us,name='why_us'),
     path('procedure/',views.procedure,name='procedure'),
+    path('aboutus/',views.aboutus,name='aboutus'),
 ]
