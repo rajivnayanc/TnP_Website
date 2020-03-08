@@ -1,0 +1,34 @@
+.img {
+    width: 100%;
+}
+
+.company_heading {
+    font-family: sans-serif;
+    padding: 5px;
+    font-size: medium;
+    font-weight: 500;
+}
+.heading{
+    margin-bottom: 30px ;
+    font-size: 40px;
+}
+.company_info{
+    margin-bottom: 50px;
+}
+.innerrow{
+    clear: both;
+    margin-bottom: 40px;
+}
+
+.innerrow > *{
+    float: none;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0;
+    padding: 10px;
+}
+.divider {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    width: 80%;
+}

@@ -1,0 +1,32 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'recruiters/main.css' %}">
+
+
+<center>
+    <h1 class="heading">Our Recruiters</h1>
+    <hr class = "divider">
+    {% if recruiters  %}
+        {% for recruiter in recruiters %}
+            {% if forloop.counter0|divisibleby:4 %}
+                <div class="innerrow">
+            {% endif %}
+
+                <div class="company-info align-bottom col-lg-2 col-md-3 col-sm-3 col-xs-8">
+                    <center>
+                        <img class="img" src="{{recruiter.logo.url}}" alt="">
+                        <p class="company_heading">{{recruiter.name}}</p>
+                    <center>
+                </div>
+
+            {% if forloop.counter|divisibleby:4 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %} 
+    {% else %}
+        <h2>No Recruiters Added Yet</h2>
+    {% endif %}  
+</center>
+{% endblock content %}
