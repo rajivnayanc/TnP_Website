@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'recruiters.apps.RecruitersConfig',
     'home_page.apps.HomePageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
