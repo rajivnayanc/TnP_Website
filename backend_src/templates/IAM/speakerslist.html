@@ -1,0 +1,35 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'IAM/main.css' %} ">
+<link rel="stylesheet" href="{% static 'IAM/speakerlist.css' %} ">
+<center>
+    <h1 class='title'>Speakers</h1>
+    <hr>
+</center>
+<div class="row">
+    <div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <div class="row">
+        {% for speaker in speakers %}
+        <a href="{% url 'IAM:event_speakerDetail' id=event_id speaker_id=speaker.id %}">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card hovercard">
+                    <div class="cardheader">
+                        <img class ="profile_pic" src="{{speaker.photo.url}}" alt="">
+                    </div>
+                    
+                    <div class="info">
+                        <div class="title">
+                            {{speaker.name}}
+                        </div>
+                        <div class="desc">{{speaker.designation}}</div>
+                        <div class="desc">{{speaker.company}}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

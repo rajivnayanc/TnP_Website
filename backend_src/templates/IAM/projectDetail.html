@@ -1,0 +1,40 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'IAM/main.css' %} ">
+<link rel="stylesheet" href="{% static 'IAM/speakerlist.css' %} ">
+<style>
+.team_members>span{
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 20px;
+}
+.project_description{
+    text-align: justify;
+}
+</style>
+<center>
+    <h1 class='title'>{{project.name}}</h1>
+    <hr>
+</center>
+<div class="row">
+    <div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <div class="content">
+            <center>
+            <h5><b>Team Members</b></h5>
+            <div class="team_members">
+                {% for participant in project.project_participants.all  %}
+                    <span class="participants_name" >{{participant.name}}</span> {% if forloop.last %}{% else %},{% endif %}
+                {% endfor %}
+            </div>
+            </center>
+            <hr>
+            <center><h5><b>Project Description</b></h5></center>
+            <div class="project_description">
+                <p style="font-size: 20px;">{{project.description}}</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}

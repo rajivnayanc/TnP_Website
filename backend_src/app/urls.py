@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home_page.urls')),
     path('recruiters/',include('recruiters.urls')),
-    path('details/',include('why_us_and_procedure.urls'))
+    path('details/',include('why_us_and_procedure.urls')),
+    path('IAM/',include('IAM.urls')),
 ]
 
 if settings.DEBUG:
