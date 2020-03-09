@@ -26,43 +26,37 @@ class Speakers(models.Model):
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return "{} - {}".format(self.name,self.iam.event_name)
 
 class Tracks(models.Model):
     track = models.CharField(max_length=255)
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
     def __str__(self):
-        return self.track
+        return "{} - {}".format(self.track,self.iam.event_name)
 
 class Projects(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    track = models.ForeignKey("IAM.Tracks", on_delete=models.CASCADE)
+    track = models.ForeignKey("IAM.Tracks", on_delete=models.CASCADE,related_name='project_track')
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return "{} - {}".format(self.name,self.iam.event_name)
     
 
 class Participants(models.Model):
     name = models.CharField(max_length=255)
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
-    project = models.ForeignKey("IAM.Projects", on_delete=models.CASCADE)
+    project = models.ForeignKey("IAM.Projects", on_delete=models.CASCADE,related_name='project_participants')
 
     def __str__(self):
-        return self.name
-
+        return "{} - {}".format(self.name,self.iam.event_name)
+    
 class Winners(models.Model):
     project = models.ForeignKey("IAM.Projects", on_delete=models.CASCADE)
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
     rank = models.IntegerField()
 
     def __str__(self):
-        return self.project
-    
-    
-
-
-
-
+        return "{} - {}".format(self.project,self.iam.event_name)
     
