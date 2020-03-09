@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'recruiters.apps.RecruitersConfig',
     'why_us_and_procedure.apps.WhyUsAndProcedureConfig',
     'home_page.apps.HomePageConfig',
+    'courses.apps.CoursesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
