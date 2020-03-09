@@ -1,0 +1,26 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'IAM/main.css' %} ">
+<link rel="stylesheet" href="{% static 'IAM/speakerlist.css' %} ">
+<center>
+    <h1 class='title'>{{speaker.name}}</h1>
+    <hr>
+</center>
+<div class="row">
+    <div class="content-block col-lg-10 col-md-10 col-sm-12 col-xs-12">
+        <div class="content">
+            <center>
+                <img style="height:300px;" src="{{speaker.photo.url}}" alt="">
+                <h1><b>Designation:</b> {{speaker.designation}}</h1>
+                <h1><b>Company:</b> {{speaker.company}}</h1>
+            </center>
+            <hr>
+            <div class="">
+                <p style="font-size: 20px;">{{speaker.description}}</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}

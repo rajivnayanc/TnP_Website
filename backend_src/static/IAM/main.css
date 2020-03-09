@@ -1,0 +1,82 @@
+.about_content {
+    text-align: justify;
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin-bottom: 50px;
+}
+.thumbnail{
+    float: none;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 100%;
+    padding:15px;
+}
+.event_logo{
+    clear: both;
+}
+a .content {
+    text-decoration: none;
+    color:black
+}
+.event_name{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.event_logo{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.event_date{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.content-block{
+    /* margin: 0 auto; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.content{
+    border: 1px solid #E8EBEF;
+    background-color: #F9F9F9;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: black;
+}
+hr{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width:60%;
+}
+.title{
+    font-weight: bold;
+}
+
+.event_name{
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: bottom;
+    font-size: 30px;
+}
+.event_date{
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: bottom;
+    font-size: 20px;
+}
+
+
+.tile-text{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.links-block{
+    display: inline-block;
+    vertical-align: middle;
+}
