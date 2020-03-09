@@ -11,7 +11,7 @@ IIIT Naya Raipur TnP Website
   - [ ] Internships  
 - [ ] IAM (Per Year - )  Rajiv  
    - [X] Speakers
-   - [ ] Projects
+   - [X] Projects
    - [ ] Winners  
 - [X] Why Us? Rajiv  
 - [X] Procedure  Rajiv    
