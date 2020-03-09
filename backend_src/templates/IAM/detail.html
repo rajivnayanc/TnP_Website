@@ -27,7 +27,7 @@
                     </a>
 
                     {% if winner_declared %}
-                    <a href="{% url 'IAM:event_tracks' event.id %}">
+                    <a href="{% url 'IAM:event_winnerstracks' event.id %}">
                     {% endif %}
                         <div class="content links-block col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <span class="tile-text">Winners</span> {% if winner_declared %}(declared) {% else %}(Not Declared){% endif %}

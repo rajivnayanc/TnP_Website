@@ -11,4 +11,6 @@ urlpatterns = [
     path('<int:id>/tracks/',views.tracklist,name='event_tracks'),
     path('<int:id>/tracks/<int:track_id>/projects/',views.projectlist,name='project_list'),
     path('<int:id>/tracks/<int:track_id>/projects/<int:project_id>/',views.projectDetail,name='project_detail'),
+    path('<int:id>/winners/tracks/',views.WinnerTracks,name='event_winnerstracks'),
+    path('<int:id>/winners/tracks/<int:track_id>/',views.WinnersList,name='event_winnerslist'),
 ]

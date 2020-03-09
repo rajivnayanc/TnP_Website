@@ -53,10 +53,10 @@ class Participants(models.Model):
         return "{} - {}".format(self.name,self.iam.event_name)
     
 class Winners(models.Model):
-    project = models.ForeignKey("IAM.Projects", on_delete=models.CASCADE)
+    project = models.ForeignKey("IAM.Projects", on_delete=models.CASCADE,related_name='winners_project')
     iam = models.ForeignKey("IAM.IAM", on_delete=models.CASCADE)
     rank = models.IntegerField()
 
     def __str__(self):
-        return "{} - {}".format(self.project,self.iam.event_name)
+        return "{}".format(self.project)
     

@@ -9,10 +9,10 @@ IIIT Naya Raipur TnP Website
 - [ ] Per Year Statistics
   - [ ] Placements
   - [ ] Internships  
-- [ ] IAM (Per Year - )  Rajiv  
+- [X] IAM (Per Year - )  Rajiv  
    - [X] Speakers
    - [X] Projects
-   - [ ] Winners  
+   - [X] Winners  
 - [X] Why Us? Rajiv  
 - [X] Procedure  Rajiv    
 - [ ] Team Jai
@@ -22,6 +22,8 @@ IIIT Naya Raipur TnP Website
   - [ ] Message From Director
   - [ ] Message from TnP Head
   - [ ] Photo
+  - [ ] Contacts
+  - [ ] Links
 
 
 

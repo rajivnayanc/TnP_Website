@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Introduction,IAM,Speakers,Projects, Tracks, Projects, Participants
+from .models import Introduction,IAM,Speakers,Projects, Tracks, Projects, Participants, Winners
 # Create your views here.
 def index(request):
     introduction = Introduction.objects.all()[0]
@@ -67,3 +67,24 @@ def projectDetail(request,id,track_id,project_id):
         'project':project
     }
     return render(request,'IAM/projectDetail.html',context)
+
+def WinnerTracks(request,id):
+    event = IAM.objects.get(pk=id)
+    tracks = Tracks.objects.filter(iam=event).all()
+    context = {
+        'event_id':event.id,
+        'tracks':tracks
+    }
+    return render(request,'IAM/Winnerstracks.html',context)
+
+def WinnersList(request,id,track_id):
+    # event = IAM.objects.get(pk=id)
+    track = Tracks.objects.get(pk=track_id)
+    winners = Winners.objects.filter(project__track=track).order_by('rank')
+    context = {
+        'event_id':id,
+        'track_id':track_id,
+        'track_name':track.track,
+        'winners':winners
+    }
+    return render(request,'IAM/winnerslist.html',context)
