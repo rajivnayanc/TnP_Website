@@ -34,7 +34,7 @@ def speakerlist(request,id):
 
 def speakerDetail(request,id,speaker_id):
     speaker = Speakers.objects.get(pk=speaker_id)
-    print(speaker.name)
+    # print(speaker.name)
     context = {
         'speaker':speaker
     }
