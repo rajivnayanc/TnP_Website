@@ -1,0 +1,256 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<link rel="stylesheet" href="{% static 'placements/main.css' %}">
+<div class="container">
+
+
+<center>
+    <h1 class = "heading">Placement Statistics | {{batch}}</h1>
+</center>
+
+<hr>
+<div class="row">
+    <p class="title">Placement Statistics</p>
+    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 table-responsive">
+        <table border=2 class="table table-striped table-hover">
+
+            {% for criteria,value in statistics.items %}
+                {% if forloop.counter0 == 0 %}
+                <tr>
+                    <th>Particulars</th>
+                    {% for key,v in value.items %}
+                        <th>{{key|upper}}</th>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+            {% for criteria,stats in statistics.items %}
+            <tr>
+                <td>{{criteria|title}}</td>
+                {% for key,value in stats.items %}
+                    <td><b> {{value|floatformat:2}} LPA</b></td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<hr class="divider">
+
+<div class="row">
+    <p class="title">Hiring Companies</p>
+    <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 table-responsive">
+        <table border=2 class="table table-striped table-hover">
+            <tr>
+                <th>S.No</th>
+                <th>Company</th>
+                <th># Students Hired</th>
+            </tr>
+            {% for company,students in companies.items %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{company|title}}</td>
+                <td>{{students|length}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="chart chart-bar col-lg-5 col-md-5">
+        <canvas height = "{{height}}px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="company_wise"></canvas>
+    </div>
+</div>
+<hr class="divider">
+
+<div class="row">
+    <p class="title">Job Roles Wise Placement</p>
+    <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 table-responsive">
+        <table border=2 class="table table-striped table-hover">
+            <tr>
+                <th>S.No</th>
+                <th>Job Roles</th>
+                <th># Students Hired</th>
+            </tr>
+            {% for jd,students in job_roles.items %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{jd|title}}</td>
+                <td>{{students|length}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="chart col-lg-5 col-md-5">
+        <canvas style="height:25px;width:25px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="job_role_wise"></canvas>
+    </div>
+</div>
+<hr class="divider">
+
+<div class="row">
+    <p class="title">Company Type Wise Placement</p>
+    <div class="col-lg-5 col-md-5 col-sm-10 col-xs-10 table-responsive">
+        <table border=2 class="table table-striped table-hover">
+            <tr>
+                <th>S.No</th>
+                <th>Type of Company</th>
+                <th># Students Hired</th>
+            </tr>
+            {% for type,students in company_type.items %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{type|title}}</td>
+                <td>{{students|length}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="chart col-lg-5 col-md-5">
+        <canvas style="height:25px;width:25px" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="company_type_wise"></canvas>
+    </div>
+</div>
+
+</div>
+<hr class="divider">
+<script>
+
+    // company-wise 
+    var canvas1 = document.getElementById('company_wise');
+    Y1 = [];
+    X1 = [];
+    {% for company,students in companies.items %}
+        Y1.push("{{company|title}}");
+        X1.push({{students|length}});
+    {% endfor %}
+
+    var data = {
+    labels: Y1,
+    datasets: [
+    {
+    label: "Company Wise Placement",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: X1,
+    }
+    ]
+    };
+    
+    var myBarChart = new Chart(canvas1,{
+        type: 'horizontalBar',
+        data:data,
+        options: {
+            responsive:true,
+            {% comment %} maintainAspectRatio: false, {% endcomment %}
+            legend:{
+            position:'bottom'
+            },
+            title: {
+            display: true,
+            text: 'Company Wise Placement'
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: '#Students'
+                    }
+                }],
+                yAxes:[{
+                    {% comment %} maxBarThickness: 100, {% endcomment %}
+                    {% comment %} barThickness: 50, {% endcomment %}
+                    {% comment %} barPercentage: 0.2,
+                    categoryPercentage: 4, {% endcomment %}
+                }]
+            }
+        }
+    });
+    
+    // Job Role Wise
+    var canvas2 = document.getElementById('job_role_wise');
+    Y2 = [];
+    X2 = [];
+    {% for jd,students in job_roles.items %}
+    Y2.push("{{jd|title}}");
+    X2.push({{students|length}});
+    {% endfor %}
+    // print(Y)
+    var data2 = {
+    labels: Y2,
+    datasets: [
+    {
+    label: "Job Role Wise",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: X2,
+    }
+    ]
+    };
+
+    var myBarChart = new Chart(canvas2,{
+    type: 'pie',
+    data:data2,
+    options: {
+        legend:{
+        position:'bottom'
+        },
+        title: {
+        display: true,
+        text: 'Job Role Wise'
+        },
+    }
+    });
+
+    // Company Type Wise
+
+    var canvas2 = document.getElementById('company_type_wise');
+    Y3 = [];
+    X3 = [];
+    {% for type,students in company_type.items %}
+    Y3.push("{{type|title}}");
+    X3.push({{students|length}});
+    {% endfor %}
+    // print(Y)
+    var data3 = {
+    labels: Y3,
+    datasets: [
+    {
+    label: "Company Type Wise",
+    backgroundColor: "rgba(255,99,132,0.2)",
+    borderColor: "rgba(255,99,132,1)",
+    borderWidth: 2,
+    hoverBackgroundColor: "rgba(255,99,132,0.4)",
+    hoverBorderColor: "rgba(255,99,132,1)",
+    data: X3,
+    }
+    ]
+    };
+
+    var myBarChart = new Chart(canvas2,{
+    type: 'pie',
+    data:data3,
+    options: {
+        legend:{
+            position:'bottom'
+        },
+        title: {
+        display: true,
+        text: 'Company Type Wise'
+        },
+    }
+    });
+
+
+
+</script>
+{% endblock content %}

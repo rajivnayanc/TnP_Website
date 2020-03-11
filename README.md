@@ -6,9 +6,9 @@ IIIT Naya Raipur TnP Website
 - [X] About Us  Jai  
 - [X] Courses (CSE, ECE, DSAI)  Jai  
 - [X] Our Recruiters  Rajiv  
-- [ ] Per Year Statistics
-  - [ ] Placements
-  - [ ] Internships  
+- [X] Per Year Statistics
+  - [X] Placements
+  - [X] Internships  
 - [X] IAM (Per Year - )  Rajiv  
    - [X] Speakers
    - [X] Projects
