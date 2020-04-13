@@ -26,6 +26,7 @@ urlpatterns = [
     path('course/',include('courses.urls')),
     path('IAM/',include('IAM.urls')),
     path('placements/',include('placements.urls')),
+    path('team/',include('team.urls')),
 ]
 
 if settings.DEBUG:

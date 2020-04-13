@@ -1,0 +1,98 @@
+{% extends 'base/base_template.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'recruiters/main.css' %}">
+
+<style>
+.card-img img{
+	border-radius: 20px 20px 0 0;
+	margin: 5% 5% 0 5%;
+	/* border: 1px black solid; */
+}
+.card-body{
+	display: table;
+	width: 100%;
+	padding: 6px;
+}
+.heading{
+	display: block;
+	margin-bottom: 0;
+	font-size: 30px;
+}
+.panel{
+	border-radius: 20px 20px 0 0;
+}
+</style>
+
+
+<div class="content-block col-lg-offset-1 col-lg-10 col-sm-12">
+	<center>
+		<h1 class="top">Placement Team</h1>
+		<hr class = "divider">
+		<div class="row">
+			
+			<div class="col-lg-12 col-sm-12">
+				<div class='pagination'>
+					<div class="heading">
+						<h3>{{ year.current }}</h3>
+					</div>
+					{% if po %}
+						<div class="row">
+						<div class="col-lg-4 col-lg-offset-4 ">
+							<div class="panel panel-default">
+								<div class="card-img">
+									<img src="{{ po.image.url }}" alt="{{ po.name }}" width="90%">
+								</div>
+								<div class="card-body">
+									<div class="heading">{{ po.name }}</div>
+									Position:<em> {{ po.position }}</em><br>
+									Email ID: <a href="mailto:{{po.email}}">{{ po.email }}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					<div class="row"></div>
+						{% for member in teams %}
+							<div class="col-lg-4">
+								<div class="panel panel-default">
+									<div class="card-img">
+										<img src="{{ member.image.url }}" alt="{{ memeber.name }}" width="90%">
+									</div>
+									
+									<div class="card-body">
+										<div class="heading">{{ member.name }}</div>
+										Position:<em> {{ member.position}} </em><br>
+										Email ID: <a href="mailto:{{member.email}}">{{ member.email }}</a> 
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</center>
+</div>
+
+
+<center>
+	<ul class="pagination">
+		<li>
+			<a href="{{ years.previous }}" aria-label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</a>
+		</li>
+		{% for year in years.years %}
+			<li><a href="{{ year.batch }}">{{ year.batch }}</a></li>
+		{% endfor %}
+		<li>
+			<a href="{{ years.next }}" aria-label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			  </a>
+		</li>
+	</ul>
+</center>
+{% endblock content %}
