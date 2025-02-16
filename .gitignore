@@ -1,4 +1,4 @@
-django_env/
+env/
 *.pyc
 *.sqlite3
 .vscode/
